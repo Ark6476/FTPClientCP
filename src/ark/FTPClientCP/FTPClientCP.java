@@ -76,8 +76,8 @@ public class FTPClientCP {
 		String username = config.getProperty("username");
 		String password = config.getProperty("password");
 		String server = config.getProperty("server");
-		int port = Integer.parseInt(System.getProperty("port"));
-		boolean passivep = Boolean.parseBoolean(config.getProperty("passive"));
+		int port = Integer.parseInt(config.getProperty("port"));
+		boolean passivep = Boolean.parseBoolean(config.getProperty("passive"), "false");
 		
 		if (0 == port) {
 			client.connect(server);
